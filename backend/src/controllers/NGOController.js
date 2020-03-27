@@ -7,17 +7,24 @@ module.exports = {
 
       const id = crypto.randomBytes(4).toString('HEX')
 
+      try {
+         await connection('ngo').insert({
+            id,
+            name,
+            email,
+            phone_number,
+            city,
+            uf
+         })
 
-      await connection('ngo').insert({
-         id,
-         name,
-         email,
-         phone_number,
-         city,
-         uf
-      })
+         return response.status(201).json({ id })
 
-      return response.status(201).json({ id })
+      }
+      catch {
+         return response.status(400).json({
+            error: "could not understand"
+         })
+      }
    },
 
    async index(request, response) {

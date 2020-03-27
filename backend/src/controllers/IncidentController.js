@@ -41,15 +41,26 @@ module.exports = {
       const { id } = request.params
       const ngo_id = request.headers.authorization
 
-      const incident = await connection('incident').where('id', id).select('ngo_id').first()
 
-      if (incident.ngo_id !== ngo_id) {
-         return response.status(401).json({
-            error: 'Unauthorized Operation'
+      try {
+
+         const incident = await connection('incident').where('id', id).select('ngo_id').first()
+
+         if (incident.ngo_id !== ngo_id) {
+            return response.status(401).json({
+               error: 'Unauthorized Operation'
+            })
+         }
+
+         await connection('incident').where('id', id).delete()
+         return response.status(204).send()
+
+      } catch (error) {
+         return response.status(400).json({
+            error: 'This incident does not exist'
          })
       }
 
-      await connection('incident').where('id', id).delete()
-      return response.status(204).send()
+
    }
 }
