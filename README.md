@@ -48,3 +48,8 @@ As tecnologias aplicadas nesse projeto foram
 - Axios
 - React-Native
 - Expo
+- Jest
+- Celebrate
+
+
+o site está disponível em https://infallible-borg-168d80.netlify.com/ v
