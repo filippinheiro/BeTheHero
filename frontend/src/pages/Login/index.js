@@ -18,6 +18,7 @@ export default function Login() {
 
       try {
          const response = await api.post('sessions', {id})
+         console.log(response)
          localStorage.setItem('ngoId', id)
          localStorage.setItem('ngoName', response.data.name)
          console.log(response.data.name)

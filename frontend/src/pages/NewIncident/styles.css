@@ -32,6 +32,21 @@
    font-size: 32px;
 }
 
+@media (max-width: 1024) {
+   .incident-container .content form {
+      margin-left: 20px;
+   }
+}
+
+@media (max-width: 750px) {
+   .incident-container .content {
+      align-self: flex-start;
+      flex-direction: column;
+   }
+
+}
+
+
 .incident-container .content section p {
    font-size: 18px;
    color: #737380;
