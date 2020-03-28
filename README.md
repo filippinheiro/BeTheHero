@@ -52,4 +52,4 @@ As tecnologias aplicadas nesse projeto foram
 - Celebrate
 
 
-o site está disponível em https://infallible-borg-168d80.netlify.com/ v
+o site está disponível em https://infallible-borg-168d80.netlify.com/
