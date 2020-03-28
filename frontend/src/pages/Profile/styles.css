@@ -8,6 +8,7 @@
 .profile-container header {
    display: flex;
    align-items: center;
+   justify-content: space-between;
 }
 
 .profile-container header span {
@@ -49,6 +50,42 @@
    grid-template-columns: 1fr 1fr;
    grid-gap: 24px;
    list-style: none;
+} 
+
+@media (max-width: 600px) {
+
+   .profile-container header {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .profile-container header img {
+      margin-bottom: 10px;
+   }
+
+
+   .profile-container header span {
+      margin-bottom: 10px;
+   }
+
+   .profile-container header .button {
+      margin-bottom: 10px;
+      margin-left: 50px;
+   }
+
+   .profile-container header button {
+      margin-top: 10px;
+   }
+
+   .profile-container ul {
+      grid-template-columns: 1fr;
+   }
+
+}
+
+@media (max-width: 320) {
+
 }
 
 
